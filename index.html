@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<!--
+  ============================================================
+  FOG LIFTER  ·  single-file landing page
+  One project. Works on GitHub Pages as-is. No frameworks.
+  Everything you'd change is marked with:  EDIT:
+  Search the file for "EDIT:" to find every spot.
+  ============================================================
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<!-- EDIT: browser tab title -->
+<title>Fog Lifter</title>
+
+<!-- EDIT: one-line description for search and link previews -->
+<meta name="description" content="A free public tool that flags manipulation and fabrication tells in any passage of text. It shows you the move, not a verdict." />
+
+<!-- EDIT (optional): delete this line to drop the web font and use system fonts only -->
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
+
+<style>
+  /* ====================================================
+     THE LOOK  ·  Fog Lifter identity: cool fog lifting to
+     clarity, one sodium-amber signal. Change these to retune.
+     EDIT: swap any value below.
+     ==================================================== */
+  :root {
+    --fog: #DCE2E6;        /* page background, mist */
+    --fog-deep: #C3CCD2;   /* deeper mist for edges */
+    --panel: #FBFCFC;      /* clear panel */
+    --ink: #1A2228;        /* primary text */
+    --muted: #566069;      /* secondary text */
+    --line: #B7C0C6;       /* hairlines */
+    --signal: #D98324;     /* the flag color, sodium amber */
+    --display: 'Space Grotesk', 'Helvetica Neue', system-ui, sans-serif;
+    --body: system-ui, -apple-system, 'Helvetica Neue', sans-serif;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--fog);
+    color: var(--ink);
+    font-family: var(--body);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  ::selection { background: var(--signal); color: var(--panel); }
+
+  .wrap {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: clamp(32px, 7vw, 80px) clamp(20px, 5vw, 40px);
+  }
+
+  /* ---- HERO ---- */
+  .eyebrow {
+    font-family: var(--display);
+    font-size: 12px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 0 0 16px;
+  }
+  h1 {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: clamp(48px, 11vw, 96px);
+    line-height: 0.92;
+    letter-spacing: -0.03em;
+    margin: 0;
+    color: var(--ink);
+  }
+  /* EDIT: the one-line pitch */
+  .lede {
+    font-size: clamp(18px, 3vw, 23px);
+    color: var(--ink);
+    max-width: 34ch;
+    margin: 22px 0 0;
+  }
+
+  /* signature: a flagged sentence, the tool's core move shown live */
+  .demo {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: clamp(20px, 4vw, 30px);
+    margin: clamp(32px, 6vw, 48px) 0;
+    font-size: clamp(17px, 2.6vw, 21px);
+    line-height: 1.8;
+  }
+  /* EDIT: you can swap this example sentence for any short one */
+  mark.tell {
+    background: rgba(217, 131, 36, 0.18);
+    border-bottom: 2px solid var(--signal);
+    border-radius: 2px;
+    padding: 1px 2px;
+    color: var(--ink);
+  }
+  .demo .flag {
+    display: block;
+    margin-top: 16px;
+    font-size: 14px;
+    color: var(--muted);
+    border-left: 3px solid var(--signal);
+    padding-left: 12px;
+    line-height: 1.5;
+  }
+  .demo .flag b { color: var(--signal); font-family: var(--display); }
+
+  /* ---- WHAT IT DOES ---- */
+  .does {
+    font-size: clamp(16px, 2.4vw, 18px);
+    color: var(--ink);
+    max-width: 56ch;
+    margin: 0;
+  }
+  .does .accent { color: var(--signal); font-weight: 600; }
+
+  hr.rule { height: 1px; background: var(--line); border: 0; margin: clamp(36px, 7vw, 60px) 0; }
+
+  /* ---- TRY IT ---- */
+  .cta {
+    display: inline-block;
+    font-family: var(--display);
+    font-weight: 500;
+    font-size: 16px;
+    padding: 14px 28px;
+    border: 1px solid var(--ink);
+    border-radius: 4px;
+    color: var(--panel);
+    background: var(--ink);
+    text-decoration: none;
+    transition: background .2s ease, color .2s ease;
+  }
+  .cta:hover, .cta:focus-visible { background: transparent; color: var(--ink); outline: none; }
+  .contact { color: var(--muted); font-size: 15px; margin: 18px 0 0; }
+  .contact a { color: var(--signal); text-decoration: none; }
+
+  footer {
+    margin-top: clamp(44px, 8vw, 80px);
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+    color: var(--muted);
+    font-size: 13px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; scroll-behavior: auto !important; }
+  }
+</style>
+</head>
+
+<body>
+<main class="wrap">
+
+  <!-- ============ HERO ============ -->
+  <!-- EDIT (optional): small label above the name, or delete this line -->
+  <p class="eyebrow">A free tool</p>
+
+  <h1>Fog Lifter</h1>
+
+  <!-- EDIT: one line, the whole pitch -->
+  <p class="lede">Paste any text. See the manipulation and fabrication tells, named and explained.</p>
+
+  <!-- ============ THE SIGNATURE: a flagged sentence ============ -->
+  <!-- EDIT: swap the example and the flag note for any short one you like -->
+  <div class="demo">
+    <span>Everyone knows the new rule is a disaster, and <mark class="tell">we have to act before it is too late.</mark></span>
+    <span class="flag"><b>False urgency.</b> Manufactured time pressure that exists to stop you thinking, not because the clock is real.</span>
+  </div>
+
+  <!-- ============ WHAT IT DOES ============ -->
+  <p class="does">Fog Lifter marks the exact words doing the work, names the move, and tells you in one plain sentence what it is doing to you. <span class="accent">It does not tell you what is true.</span> A veil only lightly obscures. Fog distorts and confuses. This tool teaches you to see the distortion, so your own judgment gets sharper.</p>
+
+  <hr class="rule" />
+
+  <!-- ============ TRY IT ============ -->
+  <!-- EDIT: point this at the live app once it is deployed -->
+  <a class="cta" href="#">Try Fog Lifter</a>
+
+  <!-- EDIT: contact line, swap or remove -->
+  <p class="contact">Questions or feedback: <a href="mailto:Peregrine.frontiers.llc@gmail.com">Peregrine.frontiers.llc@gmail.com</a></p>
+
+  <!-- ============ FOOTER ============ -->
+  <footer>
+    <!-- EDIT: credit line and year. Keep, change, or delete. -->
+    Built by a little bird · 2026
+  </footer>
+
+</main>
+</body>
+</html>
