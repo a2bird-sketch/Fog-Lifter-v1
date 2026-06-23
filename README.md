@@ -58,3 +58,5 @@ The inline style objects are intentional, so the component carries its own look 
 ## Layer placement
 
 Fog Lifter is the public, accessible distillation of the AFD framework into a literacy tool against the manipulation layer of subscription capture. Free, no account, public. It sits in the apps layer under Peregrine Frontiers, distinct from the Little Bird editorial voice and the Dissidents Network factual architecture.
+
+
